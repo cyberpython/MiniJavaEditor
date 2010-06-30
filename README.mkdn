@@ -1,0 +1,25 @@
+Description
+-----------
+MiniJavaEditor is the editor part of [MiniJed](http://cyberpython.wordpress.com/2010/04/01/minijed-minijava-ide/) (MiniJed but without the integrated [Minijava](http://www.cambridge.org/us/features/052182060X/) compiler).<br/>
+MiniJed is a simple MiniJava IDE (Integrated Development Environment) written in Java/Swing.<br/>
+It allows you to edit, compile and run MiniJava programs.<br/>
+The code does not include any part of the MiniJava compiler, but you can integrate your own compiler implementation with the editor by following the instructions below.<br/>
+<br/>
+Usage
+-----
+* Your lexer must throw Exceptions that subclass the abstract class minijed.compiler.infrastructure.MiniJavaLexerException
+* Your Token class must implement the minijed.compiler.infrastructure.MiniJavaToken interface
+* Your parser must throw Exceptions that subclass the abstract class minijed.compiler.infrastructure.MiniJavaParserException and implement its abstract method : <br/>
+public abstract MiniJavaToken getToken();<br/>
+* Your compiler must subclass the abstract class minijed.compiler.infrastructure.MiniJavaCompiler and implement its abstract method :<br/>
+abstract public void compile(Reader input, DefaultListModel output, File outputDir) throws MiniJavaParserException, MiniJavaLexerException, IOException;<br/>
+* You must change line 579 of minijed.MiniJedView.java:<br/>
+MiniJavaCompiler compiler = new YourMiniJavaCompiler();<br/>
+so that it creates a new instance of your compiler.
+<br/>
+License
+-------
+MiniJavaEditor and its source code is distributed under the terms of the [MIT License](http://www.opensource.org/licenses/mit-license.php).<br/>
+The included JSyntaxPane source code is distributed under the [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0).<br/>
+The included DocumentHandling(documentcontainer.* package) source code is distributed under the [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0).<br/>
+<br/>
