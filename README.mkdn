@@ -1,6 +1,6 @@
 Description
 -----------
-MiniJavaEditor is the editor part of [MiniJed](http://cyberpython.wordpress.com/2010/04/01/minijed-minijava-ide/) (MiniJed but without the integrated [Minijava](http://www.cambridge.org/us/features/052182060X/) compiler).<br/>
+MiniJavaEditor is the editor part of [MiniJed](http://gmigdos.wordpress.com/2010/04/01/minijed-minijava-ide/) (MiniJed but without the integrated [Minijava](http://www.cambridge.org/us/features/052182060X/) compiler).<br/>
 MiniJed is a simple MiniJava IDE (Integrated Development Environment) written in Java/Swing.<br/>
 It allows you to edit, compile and run MiniJava programs.<br/>
 The code does not include any part of the MiniJava compiler, but you can integrate your own compiler implementation with the editor by following the instructions below.<br/>
